@@ -2,7 +2,7 @@
 
 Created on node environment
 
-Presents a 4 pages on routing:
+Presents a 4 pages:
 - index.html
 - about.html
 - contact-me.html
