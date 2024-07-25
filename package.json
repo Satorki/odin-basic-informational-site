@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Created on node environment",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "node indexExpress.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0"
   }
 }
