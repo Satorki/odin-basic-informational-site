@@ -12,14 +12,16 @@ app.use(express.json());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-const aboutRoute = require("./routes/about");
+const homeRoute = require("./routes/homeRouter");
+app.use("/", homeRoute);
+const contactRoute = require("./routes/contactRouter");
+app.use("/contact-me", contactRoute);
+const aboutRoute = require("./routes/aboutRouter");
 app.use("/about", aboutRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
 
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "views", "index.html"));
@@ -40,4 +42,3 @@ app.listen(PORT, () => {
 // app.use((req, res, next) => {
 //   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 // });
-
