@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Node.js - Home</title>
+    <%- include("header"); %>
   </head>
   <body>
     <header>
@@ -15,11 +13,12 @@
       </nav>
     </header>
     <main>
-      <h2>Home</h2>
+      <h2><%= sitename %></h2>
       <p>
         Node.js is an open-source, cross-platform, JavaScript runtime
         environment that executes JavaScript code outside of a web browser.
       </p>
     </main>
+    <footer><%- include("footer"); %></footer>
   </body>
 </html>
