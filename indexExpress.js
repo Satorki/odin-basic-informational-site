@@ -13,32 +13,21 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 const homeRoute = require("./routes/homeRouter");
-app.use("/", homeRoute);
 const contactRoute = require("./routes/contactRouter");
-app.use("/contact-me", contactRoute);
 const aboutRoute = require("./routes/aboutRouter");
+
+app.use("/", homeRoute);
 app.use("/about", aboutRoute);
+app.use("/contact-me", contactRoute);
+
+app.use((req, res, next) => {
+  res.status(404).render("404", { url: req.originalUrl });
+});
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render("500", { error: err });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "index.html"));
-// });
-
-// app.get("/index", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "index.html"));
-// });
-
-// app.get("/about", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "about.html"));
-// });
-
-// app.get("/contact-me", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "contact-me.html"));
-// });
-
-// app.use((req, res, next) => {
-//   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
-// });

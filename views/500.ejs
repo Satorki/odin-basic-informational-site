@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Error</title>
+  </head>
+  <body>
+    <header>
+      <h1>Server Error</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact-me">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <h2>500 - Internal Server Error</h2>
+      <p>Something went wrong on the server. Please try again later.</p>
+      <pre><%= error.stack %></pre>
+    </main>
+  </body>
+</html>
